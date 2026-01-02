@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - JARK1</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 5rem 1rem 2rem;
+      position: relative;
+    }
+
+    header img.logo {
+      max-width: 100px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #000000cc;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 1rem;
+      z-index: 999;
+    }
+
+    nav a {
+      margin: 0.5rem 1rem;
+      color: #00bcd4;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 6rem auto 4rem;
+      padding: 2rem;
+    }
+
+    .team-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .founder-message {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .founder-image {
+      flex: 1;
+      min-width: 250px;
+      text-align: center;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .founder-image img {
+      width: 250px;
+      height: 250px;
+      border-radius: 70%;
+      object-fit: cover;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    }
+
+    .founder-caption {
+      margin-top: 0.75rem;
+      font-weight: bold;
+      color: #e6ecec;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .cofounders {
+      margin-top: 4rem;
+    }
+
+    .cofounders h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .cofounder-grid {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cofounder-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 15px;
+      width: 220px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+      backdrop-filter: blur(6px);
+    }
+
+    .cofounder-card:hover {
+      transform: scale(1.05);
+    }
+
+    .cofounder-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 0.75rem;
+    }
+
+    .cofounder-card h4 {
+      font-size: 1.1rem;
+      color: #00bcd4;
+    }
+
+    footer {
+      background: #111827;
+      text-align: center;
+      color: white;
+      padding: 3rem 1rem;
+      margin-top: 4rem;
+    }
+
+    footer img {
+      max-width: 60px;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+      margin: 0 0.5rem;
+      color: #00bcd4;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* 📱 Mobile styles */
+    @media (max-width: 768px) {
+      header {
+        padding-top: 7rem;
+      }
+
+      .team-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 0.5rem 0;
+      }
+
+      .cofounder-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cofounder-card {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .founder-image img {
+        width: 180px;
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <!-- ✅ Navigation -->
+    <nav class="top-buttons">
+      <a href="main.html">Home</a>
+      <a href="ourservice.html">Our Services</a>
+      <a href="aboutus.html">About Us</a>
+       <a href="contactus.php">Contact Us</a>
+      
+    </nav>
+
+    <header>
+      <img src="jark1.png" alt="jaark1 Logo" class="logo" />
+    </header>
+
+    <section>
+      <div class="team-section">
+        <div class="founder-message">
+          <h2>Message from Our Founder</h2>
+          <p>
+           <br> Welcome to JARK1 Tech <br>A startup born from the dream to uplift local talent, digitalize small businesses, and bring creative ideas to life.<br><br> I believe our youth and local entrepreneurs deserve better tools and platforms. Together, we're building a future where creativity meets purpose.
+          </p>
+          <p style="margin-top: 1rem; font-weight: bold;">- Amrix Patel (Founder)</p>
+        </div>
+        <div class="founder-image">
+          <img src="founder.jpg" alt="Founder Image" />
+          <div class="founder-caption">Founder/CEO: Amrix Patel</div>
+        </div>
+      </div>
+
+      <div class="cofounders">
+        <h3>Our Team</h3>
+        <div class="cofounder-grid">
+          <div class="cofounder-card">
+            <img src="cofounde.png" alt="Co-Founder 1">
+            <h4>xyz</h4>
+            <p>Marketing & Strategy</p>
+          </div>
+          <div class="cofounder-card">
+            <img src="IMAGE" alt="Co-Founder 2">
+            <h4> XXXX</h4>
+            <p>Technical Lead</p>
+          </div>
+          <div class="cofounder-card">
+            <img src="IMAGEX" alt="Co-Founder 3">
+            <h4>XXXX</h4>
+            <p>Creative Director</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <img src="jark1.png" alt="jark Logo" />
+    <p>Email: jark1@gmail.com</p>
+    <p>Phone: +977 9769755690</p>
+
+    <div class="footer-links">
+      <a href="https://facebook.com">Facebook</a> |
+      <a href="https://instagram.com">Instagram</a> |
+      <a href="https://twitter.com">Twitter</a>
+    </div>
+
+    <div class="footer-bottom">&copy; 2025 JARK1 Tech. All rights reserved.</div>
+  </footer>
+</body>
+</html>

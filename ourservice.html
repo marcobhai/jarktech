@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JARK1 - Our Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.75);
+      padding-bottom: 3rem;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #000000cc;
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 999;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      margin: 0.5rem 1rem;
+      color: #00bcd4;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      text-align: center;
+      padding: 6rem 1rem 3rem;
+    }
+
+    header img.logo {
+      max-width: 80px;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    .main-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 4rem 2rem;
+    }
+
+    .main-section .text {
+      flex: 1 1 100%;
+      max-width: 1000px;
+      padding: 1rem;
+    }
+
+    .main-section .text h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #00bcd4;
+    }
+
+    .main-section .text ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+    .youtube-info {
+      text-align: center;
+      padding: 3rem 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .youtube-info h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #00bcd4;
+    }
+
+    .youtube-info p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .youtube-btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #ff0000;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .youtube-btn:hover {
+      background-color: #cc0000;
+    }
+
+    footer {
+      background: #111827;
+      text-align: center;
+      color: white;
+      padding: 3rem 1rem;
+      margin-top: 4rem;
+    }
+
+    footer img {
+      max-width: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      margin: 1rem 0;
+    }
+
+    .footer-links a {
+      margin: 0 0.5rem;
+      color: #00bcd4;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .main-section {
+        flex-direction: column;
+        padding: 2rem 1rem;
+      }
+
+      .main-section .text ul {
+        font-size: 1rem;
+      }
+
+      .youtube-info h2 {
+        font-size: 1.5rem;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 0.5rem 0.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <!-- ✅ Navigation -->
+    <nav class="top-buttons">
+      <a href="main.html">Home</a>
+      <a href="ourservice.html">Our Services</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="contactus.php">Contact Us</a>
+      
+    </nav>
+
+    <header>
+      <img src="jark1.png" alt="Rookie Logo" class="logo">
+      <h1>Our Services</h1>
+    </header>
+
+    <section class="main-section">
+      <div class="text">
+        <h2>What We Offer</h2>
+
+        <section class="service-section">
+          <h2 class="section-title">🎨 Logo & Branding Design</h2>
+          <ul>
+            <li>Custom Logo Design</li>
+            <li>YouTube Thumbnails</li>
+            <li>Business Cards</li>
+            <li>Posters, Flyers & Banners</li>
+            <li>Social Media Visuals</li>
+          </ul>
+        </section>
+
+        <section class="service-section">
+          <h2 class="section-title">💻 Simple Website Building</h2>
+          <ul>
+            <li>Personal Portfolios</li>
+            <li>Small Business Sites</li>
+            <li>Event Promotion Pages</li>
+          </ul>
+        </section>
+
+        <section class="service-section">
+          <h2 class="section-title">📱 Social Media Management</h2>
+          <ul>
+            <li>Monthly Content Calendar</li>
+            <li>Content & Caption Writing</li>
+            <li>Hashtag Strategy</li>
+            <li>Performance Reports</li>
+          </ul>
+        </section>
+
+        <section class="service-section">
+          <h2 class="section-title">🧑‍🎓 Student Project & Presentation</h2>
+          <ul>
+            <li>Final Year Projects</li>
+            <li>Project Reports & Documentation</li>
+            <li>Creative PowerPoint Presentations</li>
+            <li>Thesis Formatting</li>
+          </ul>
+        </section>
+        <section class="service-section">
+          <h2 class="section-title">🏆 Competitions & Tournaments</h2>
+          <ul>
+            <li>🎮 Esports – PUBG, Free Fire</li>
+            <li>🎧 Music Battles – Singing, Beats</li>
+            <li>✏️ Hackathons – Hacking, Design</li>
+            <li>⚽ Sports – Indoor & Outdoor Events</li>
+          </ul>
+        </section>
+      </div>
+    </section>
+
+    <section class="youtube-info">
+      <h2>🎵 About JARK MEDIA</h2>
+      <p>
+        JARK Media is our YouTube initiative to discover and promote local singing and musical talent. We produce short emotional stories, meditative content, and organize online competitions. Even if you’re a beginner, Rookie Music welcomes you to share your voice and passion with the world.
+      </p>
+      <a href="https://www.youtube.com/@yourchannel" target="_blank" class="youtube-btn">📺 Visit Our YouTube</a>
+    </section>
+  </div>
+
+  <footer>
+    <img src="jark1.png" alt="Rookie Logo">
+    <p>Email: jark1services@gmail.com</p>
+    <p>Phone: +977 9769755690</p>
+<div class="footer-links">
+<a href="https://facebook.com">Facebook</a> |
+<a href="https://instagram.com">Instagram</a> |
+<a href="https://twitter.com">Twitter</a>
+</div>
+<div class="footer-bottom">© 2025 JARK1 Tech. All rights reserved.</div>
+
+</footer> </body> </html> ```

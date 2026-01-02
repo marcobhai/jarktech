@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JARK1 - Digital Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+  html { scroll-behavior: smooth; }
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+  body {
+    background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+  }
+
+  .overlay {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+  }
+
+  nav.top-buttons {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+  }
+
+  nav.top-buttons a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+  }
+
+  nav.top-buttons a:hover {
+    color: #00bcd4;
+  }
+
+  header {
+    text-align: center;
+    padding: 6rem 1rem 3rem;
+  }
+
+  header img.logo {
+    max-width: 120px;
+    margin-bottom: 1rem;
+  }
+
+  header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    animation: float 2s ease-in-out infinite;
+  }
+
+  header p {
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    font-weight: 600;
+  }
+
+  .social-icons {
+    margin-top: 1rem;
+  }
+
+  .social-icons a {
+    color: white;
+    margin: 0 0.5rem;
+    font-size: 1.4rem;
+    text-decoration: none;
+  }
+
+  .counter-section {
+    background: rgba(0, 0, 50, 0.8);
+    padding: 3rem 2rem;
+    text-align: center;
+    color: white;
+  }
+
+  .counter-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+  }
+
+  .counter-box {
+    flex: 1 1 200px;
+  }
+
+  .counter-box span.counter {
+    font-size: 3rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #00bcd4;
+  }
+
+  .counter-box p {
+    font-size: 1.2rem;
+  }
+   .image-banner {
+  position: relative;
+  background-image: url('https://images.unsplash.com/photo-1605902711622-cfb43c4437d5?auto=format&fit=crop&w=1920&q=80'); /* You can change this URL */
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: -2rem;
+}
+
+.image-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay for text readability */
+  z-index: 1;
+}
+
+.image-banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #ffffff;
+  padding: 1rem 2rem;
+}
+
+.image-banner-content h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.image-banner-content p {
+  font-size: 1.2rem;
+}
+
+  .section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid white;
+    display: inline-block;
+  }
+
+  ul { list-style: none; margin-top: 1rem; }
+  li { margin-bottom: 0.8rem; font-size: 1.2rem; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .portfolio-grid, .review-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .portfolio-card, .review-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 15px;
+    width: 280px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(6px);
+    text-align: center;
+  }
+
+  .portfolio-card:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  }
+
+  .portfolio-card img, .review-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+
+  .portfolio-card h3, .review-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: #00bcd4;
+  }
+
+  .portfolio-card p, .review-card p {
+    font-size: 1rem;
+    color: #ddd;
+  }
+
+  footer {
+    background: #111827;
+    text-align: center;
+    color: white;
+    padding: 3rem 1rem;
+    margin-top: 4rem;
+  }
+
+  footer img {
+    max-width: 50px;
+    margin-bottom: 1rem;
+  }
+
+  .footer-links {
+    margin: 1rem 0;
+  }
+
+  .footer-links a {
+    margin: 0 0.5rem;
+    color: #00bcd4;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-bottom {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+
+  .facebook-box {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border: 2px solid #00bcd4;
+    border-radius: 10px;
+    max-width: 400px;
+    text-align: center;
+    background: rgba(0, 188, 212, 0.1);
+    font-size: 1.2rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .facebook-box a {
+    color: #00bcd4;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .facebook-box a:hover {
+    text-decoration: underline;
+  }
+
+  @media screen and (max-width: 768px) {
+    header h1 {
+      font-size: 2.2rem;
+    }
+
+    header p {
+      font-size: 1rem;
+    }
+
+    nav.top-buttons a {
+      margin: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .section h2 {
+      font-size: 1.6rem;
+    }
+
+    li {
+      font-size: 1rem;
+    }
+
+    .facebook-box {
+      font-size: 1rem;
+      padding: 1rem;
+    }
+
+    iframe {
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .portfolio-card, .review-card {
+      width: 90%;
+    }
+
+    nav.top-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    nav.top-buttons a {
+      margin: 0.3rem 0;
+    }
+  }
+</style>
+
+</head>
+<body>
+  <div class="overlay">
+
+    <!-- ✅ Navigation -->
+    <nav class="top-buttons">
+      <a href="main.html">Home</a>
+      <a href="ourservice.html">Our Services</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="contactus.php">Contact Us</a>
+    </nav>
+
+    <!-- Header -->
+    <header id="home">
+      <img src="jark1.png" alt="Rookie Logo" class="logo" />
+      <h1>JARK TECH</h1>
+      <p>"Empowering your Dreams with Digital Wings."</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=61574834984208" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.youtube.com/@CrickNamaste" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </header>
+
+    <!-- 🔥 START: Counter Section -->
+    <section class="section counter-section">
+      <div class="counter-grid">
+        <div class="counter-box">
+          <span class="counter" data-target="1">0</span>
+          <p>Years Of Experience</p>
+        </div>
+        <div class="counter-box">
+          <span class="counter" data-target="50">0</span>
+          <p>Trusted Clients</p>
+        </div>
+        <div class="counter-box">
+          <span class="counter" data-target="15">0</span>
+          <p>Products</p>
+        </div>
+        <div class="counter-box">
+          <span class="counter" data-target="100">0</span>
+          <p>Projects Completed</p>
+        </div>
+      </div>
+    </section>
+    <!-- 🔥 END: Counter Section -->
+
+    <script>
+      const counters = document.querySelectorAll('.counter');
+      const speed = 100;
+
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText;
+          const increment = target / speed;
+
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 20);
+          } else {
+            counter.innerText = target.toLocaleString();
+          }
+        };
+
+        const observer = new IntersectionObserver(entries => {
+          if (entries[0].isIntersecting) {
+            updateCount();
+            observer.disconnect();
+          }
+        }, { threshold: 0.7 });
+
+        observer.observe(counter);
+      });
+    </script>
+<!-- 🚀 Image Banner Section -->
+<section class="image-banner">
+  <div class="image-banner-content">
+    <h2>Your Digital Journey Starts Here</h2>
+    <p>Empowering startups, creators, and businesses with smart digital solutions.</p>
+  </div>
+</section>
+
+    <!-- Services -->
+    <section id="services" class="section">
+      <h2>Our Services</h2>
+      <ul>
+        <li>🎨 Logo & Branding Design</li>
+        <li>💻 Simple Website Building</li>
+        <li>📱 Social Media Management</li>
+        <li>🏆 Competitions & Tournaments</li>
+      </ul>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="section">
+      <h2>Our Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <img src="web.png" alt="Local Shop Website" />
+          <h3>Local Shop Website</h3>
+          <p>Designed a responsive website for a local grocery store to boost its online presence.</p>
+        </div>
+        <div class="portfolio-card">
+          <img src="topupicon.png" alt="Game Top-Up Platform" />
+          <h3> Competitions & Tournaments</h3>
+          <p>organizing different outdoor & indoor games online / ofline & different hacking program.</p>
+        </div>
+        <div class="portfolio-card">
+          <img src="social.png" alt="Social Media Campaign" />
+          <h3>Social Media Campaign</h3>
+          <p>Boosted engagement for brand through custom social media strategies.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section">
+      <h2>Client Reviews</h2>
+      <div class="review-grid">
+        <div class="review-card"><h3>Uday Beer's Store</h3><p>“Rookie built our shop website beautifully! Affordable and professional!”</p></div>
+        <div class="review-card"><h3>Hoora Nepal</h3><p>“Top-up system is quick and secure. Rookie really gets gamers!”</p></div>
+        <div class="review-card"><h3>Trishakti Motorcycle Centre</h3><p>“Social media engagement tripled in a week. Rookie nailed it.”</p></div>
+        <div class="review-card"><h3>Proud Nepal IT Suppliers </h3><p>“Super clean and mobile-friendly website. Highly recommended!”</p></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="why to choose us" class="section">
+      <h2>Why To Choose Us</h2>
+      <p>🌟 Why Choose JARK ?<br><br>
+       At JARK, we believe that big change starts with small businesses. Our mission is to empower local entrepreneurs, shops, and creators with affordable, modern, and result-driven digital solutions. Here’s why hundreds trust us:<br><br>
+
+✅ Affordable Excellence – We offer premium services without the premium price tag. Perfect for startups and small businesses.<br><br>
+
+✅ Local Focus, Global Quality – We understand the local market deeply and combine that knowledge with global-standard design and technology.<br><br>
+
+✅ One-Stop Digital Partner – From website design ,social media management and branding, everything you need under one roof.<br><br>
+
+✅ Passion-Driven Team – We're not just service providers—we're creators, gamers, designers, and marketers passionate about helping you grow.<br><br>
+
+✅ Real Results, Real Fast – Whether it's boosting your online presence or increasing sales through smart digital tools—we deliver outcomes, not just promises.<br><br>
+
+Let us help take your vision online with style, strategy, and heart.<br><br>
+Choose Rookie. Choose the future.
+</p>
+      </p>
+
+      <div style="margin-top: 3rem; text-align: center;">
+        <h2 style="font-size: 2rem; margin-bottom: 1rem;">JARK MEDIA</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 1rem; color: #ddd;">
+          JARK Media is our creative space where we share relaxing, emotional, and inspiring program. We're also building JARK as a digital brand and organize different competition to discover and support hidden talent.
+        </p>
+        <iframe width="360" height="215"
+          src="https://www.youtube.com/embed?listType=user_uploads&list=CrickNamaste"
+          title="Rookie Music YouTube"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+        <br><br>
+        <a href="https://www.youtube.com/@CrickNamaste" target="_blank"
+          style="background: #ff0000; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: bold;">
+          🔴 Visit JARK Media on YouTube
+        </a>
+      </div>
+    </section>
+
+    <!-- New Call to Action Section -->
+    <section class="section">
+      <h2><strong>Ready to Transform Your Digital Presence?</strong></h2>
+      <p>Let's work together to bring your vision to life. Our team of experts is ready to help you achieve your goals.</p>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <img src="jark1.png" alt="Rookie Logo" />
+    <p>Email: jark1services@gmail.com</p>
+    <p>Phone: +977 9769755690</p>
+    <div class="footer-links">
+      <a href="https://facebook.com">Facebook</a> |
+      <a href="https://instagram.com">Instagram</a> |
+      <a href="https://twitter.com">Twitter</a>
+    </div>
+    <div class="footer-bottom">&copy; 2025 JARK1 Tech. All rights reserved.</div>
+  </footer>
+</body>
+</html>
